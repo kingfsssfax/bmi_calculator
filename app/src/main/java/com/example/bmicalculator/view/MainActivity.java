@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     controller = Controller.getInstance();
                     controller.createBMI(weight,height);
                     Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
+                    intent.putExtra("result",controller.getBmi());
                     intent.putExtra("Bmi",controller.getResult());
                     startActivityForResult(intent,REQUEST_CODE);
                 }

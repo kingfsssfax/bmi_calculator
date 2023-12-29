@@ -26,4 +26,5 @@ public class Controller {
     public String getResult(){
         return bmi.getInterpretation();
     }
+    public double getBmi(){return bmi.getBmi();}
 }
