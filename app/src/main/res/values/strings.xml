@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="poids">Entrez le poids (en kg)</string>
+    <string name="taille">Entrez la taille (en m)</string>
+</resources>
