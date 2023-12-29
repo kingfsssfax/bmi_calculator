@@ -16,6 +16,7 @@ import com.example.bmicalculator.controller.Controller;
 public class MainActivity extends AppCompatActivity {
 
     // Les attributs de classe MainActivity
+    private final int REQUEST_CODE = 1;
     private EditText etWeight ;
     private EditText etHeight;
     private Button btnCalculer;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     controller.createBMI(weight,height);
                     Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
                     intent.putExtra("Bmi",controller.getResult());
-                    startActivityForResult(intent, REQUEST_CODE);
+                    startActivityForResult(intent,REQUEST_CODE);
                 }
             }
         });
@@ -71,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == /*xxx*/)
-            if (/*xxx*/ == RESULT_CANCELED) {
-                Toast.makeText(MainActivity.this, "ERROR : RESULT_CANCELED", Toast.LENGTH_SHORT).show();
-            }
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_CANCELED){
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+    }
+
     }
 
     private void init() {
